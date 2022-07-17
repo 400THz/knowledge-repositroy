@@ -11,7 +11,6 @@ const Upload = () => {
   const [inpval, setINP] = useState({
 
     document_name: "",
-    publication:"", 
     document_validity: "",
     description: ""
   })
@@ -33,7 +32,7 @@ const Upload = () => {
   const addinpdata = async(e) => {
     e.preventDefault();
 
-    const { document_name,publication,  document_validity, description } = inpval;
+    const { document_name,  document_validity, description } = inpval;
     
     const res = await fetch("/upload", {
             method: "POST",
@@ -41,7 +40,7 @@ const Upload = () => {
                 "Content-Type": "application/json"
             },
       body: JSON.stringify({
-        document_name, publication , document_validity, description
+        document_name,  document_validity, description
       })
 
     });
@@ -72,27 +71,20 @@ const Upload = () => {
       {/* <NavLink to="/"> HOME</NavLink> */}
       <form className="mt-3">
 
-        <div class="mb-3">
+        <div class="mb-3 col-lg-6 col-md-6 col-12">
           <label for="doc_name" class="form-label">Document Title</label>
          <input type="string" name="document_name" value={inpval.document_name} onChange={setdata} class="form-control" id="doc_name" />
         </div>
-
-        {/* <div class="mb-3">
-          <label for="publication_year" class="form-label"> publication Year</label>
-          <input type="number"  name="publication" value={inpval.publication} onChange={setdata}
-          class="form-control" id="dpublication_year"  />
-        </div> */}
-
         
 
-        <div class="mb-3">
+        <div class="mb-3 col-lg-6 col-md-6 col-12">
           <label for="doc_validity" class="form-label" >Document Validity(mention year only in YYYY format)</label>
           {/* <Calendar onChange={onChange} value={value} /> */}
           <input type="Number" name="document_validity" value={inpval.document_validity} onChange={setdata}
           class="form-control" id="doc_validity" />
         </div>
 
-        <div class="mb-3">
+        <div class="mb-3 col-lg-6 col-md-6 col-12">
           <label for="doc_description" class="form-label">Document Description</label>
           <textarea type="string" name="description" value={inpval.description} onChange={setdata} className='form-control' id="" cols="20" rows="4"></textarea>
         

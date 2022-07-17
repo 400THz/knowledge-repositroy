@@ -11,7 +11,6 @@ const Edit = () => {
     const [inpval, setINP] = useState({
     
         document_name:"",
-        // publication:"",
         document_validity:"",
         description:""
       }
@@ -67,7 +66,7 @@ const Edit = () => {
   const updatedoc = async(e) =>{
     e.preventDefault();
 
-    const {document_name,publication, document_validity,description} = inpval;
+    const {document_name, document_validity,description} = inpval;
 
     const res2 = await fetch(`/updatedoc/${id}`,{
       method: "PATCH",
@@ -75,7 +74,7 @@ const Edit = () => {
                 "Content-Type": "application/json"
       },
       body:JSON.stringify({
-        document_name,publication, document_validity,description
+        document_name,document_validity,description
       })
     });
 
@@ -104,13 +103,6 @@ const Edit = () => {
           <label for="doc_name" class="form-label">Document Title</label>
           <input type="text" name="document_name" value={inpval.document_name} onChange={setdata} class="form-control" id="doc_name" />
         </div>
-{/* 
-        <div class="mb-3">
-          <label for="publication_year" class="form-label"> publication Year</label>
-          <input type="number"  name="publication" value={inpval.publication} onChange={setdata}
-          class="form-control" id="dpublication_year"  />
-        </div> */}
-
 
         <div class="mb-3">
           <label for="doc_validity" class="form-label">Document Validity</label>

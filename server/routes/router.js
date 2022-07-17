@@ -9,10 +9,10 @@ const documents = require("../models/docSchema");
 
 router.post("/upload", async (req, res) => {
     // console.log(req.body);
-    const { document_name, publication,  document_validity, description } = req.body;
+    const { document_name,  document_validity, description } = req.body;
 
 
-    if (!document_name || !publication || !document_validity || !description) {
+    if (!document_name ||  !document_validity || !description) {
         res.status(422).json("Please fill the data");
     }
 
@@ -26,7 +26,7 @@ router.post("/upload", async (req, res) => {
         } else {
             const addocument = new documents({
                 // name,email,age,mobile,work,add,desc
-                document_name, publication,  document_validity, description
+                document_name, document_validity, description
             });
 
             await addocument.save();
@@ -63,7 +63,7 @@ router.get("/getdocument/:id", async (req, res) => {
         console.log(docindividual);
         res.status(201).json(docindividual)
     } catch (error) {
-        res.status(422).json(error)
+        res.status(422).json(error);
 
     }
 })

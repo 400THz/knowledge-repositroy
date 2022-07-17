@@ -5,11 +5,7 @@ const docSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    publication: {
-        type: Number,
-        required: true
-    },
-
+    
     document_validity:{
         type: Number,
         required: true

@@ -103,9 +103,9 @@ const Home = () => {
 
                                             <th scope="row">{id + 1}</th>
                                             <td><span className="white-text">{element.document_name}</span></td>
-                                            {/* <td>{element.publication}</td>  */}
+                                         
                                             <td><span className="white-text">{element.document_validity}</span></td>
-                                            {/* <td input type={Date}>{date}</td> */}
+                                            
                                             <td className="d-flex justify-content-between">
                                             <span className="white-text">
                                                 <NavLink to={`view/${element._id}`}> <button className="btn btn-success"> <RemoveRedEyeIcon/></button> </NavLink>
