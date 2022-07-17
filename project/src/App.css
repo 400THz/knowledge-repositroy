@@ -1,0 +1,37 @@
+.add_btn{
+  text-align:right;
+}
+.container{
+  overflow: auto;
+  font-weight: 650;
+}
+
+
+/* table */
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+tr:hover {background-color: rgb(196, 191, 191);}
+
+.container{
+  background-image: 
+  /* url("https://media.geeksforgeeks.org/wp-content/uploads/rk.png"); */
+  /* url("https://tse3.mm.bing.net/th?id=OIP.1GUO6qjv8M8p16oCXbTfTwHaGl&pid=Api&P=0&w=191&h=170"); */
+  url("https://tse4.mm.bing.net/th?id=OIP.X-SsjVIP5SutC60d9QDzvgHaE8&pid=Api&P=0&w=280&h=187");  
+  /* background-size: "cover";
+  height: 100vh;
+  margin-top: -70px;
+  font-size:50px;
+  background-repeat:no-repeat;  */
+  min-height: 100%;
+  /* background-image: url(image.jpg); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
